@@ -40,23 +40,28 @@
 		<a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="fas fa-bars white-text"></i></a>
 	</div>
 </nav>
+{% for object in section_list %}
+
 <ul id="tutorials-web-dropdown" class="dropdown-content">
-	<li><a href="section/python">Python Programming</a></li>
+	<li><a href="{% url 'section_detail' object.id %}">{{ object.title }}</a></li>
 	<li class="divider"></li>
-	<li><a href="https://www.codesansar.com/c-programming">C Programming</a></li>
 </ul>
-  
+  {% endfor %}
+
+
+
 <ul id="tutorials-mobile-dropdown" class="dropdown-content">
 </ul>
   
+
+
 <ul id="examples-web-dropdown" class="dropdown-content">
-	<li><a href="https://www.codesansar.com/c-programming-examples">C Programming Examples</a></li>
-	<li class="divider"></li>
-	<li><a href="python-programming-examples.html">Python Programming Examples</a></li>
 </ul> 
   
 <ul id="examples-mobile-dropdown" class="dropdown-content">
-</ul><div id="index-banner" class="parallax-container">
+</ul>
+
+<div id="index-banner" class="parallax-container">
 	<div class="section no-pad-bot">
 		<div class="container">
 			<br><br>

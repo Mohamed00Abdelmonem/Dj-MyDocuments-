@@ -295,12 +295,12 @@ min-width: 180px;
 }
 
 
-</style></head>
-
+</style>
+</head>
 <body>
 <nav class="teal darken-1 z-depth-0" role="navigation">
 	<div class="nav-wrapper container">
-		<a id="logo-container" href="https://www.codesansar.com" class="brand-logo">
+		<a id="logo-container" href="{% url 'home' %}" class="brand-logo">
 			<img src="https://www.codesansar.com/themes/musu/assets/images/logo.jpg" href="index/" alt="CodeSansar" class="responsive-img">
 		</a>
 		<ul class="right hide-on-med-and-down">
@@ -455,7 +455,7 @@ min-width: 180px;
 		<div class="col xl8 l8 m12 s12 push-xl3 push-l3">
 			<main role="main">
 				<article class="page">
-					<h1 class="center">Learn Python Programming Language</h1>
+					<h1 class="center">{{object.title}}</h1>
 										<div id="tocbutton">
 	<a class="btn deep-orange white-text dropdown-trigger" data-target="toc"> TOC &#9781;</a></p>
 	
@@ -472,19 +472,7 @@ min-width: 180px;
 </div>
 
 
-<p>Coding has become the <strong>new literacy for 21<sup>st</sup> century</strong>. Everyone in the 21<sup>st</sup> century will have to <strong>learn to code</strong>. </p>
-
-<p><strong>So, what is coding?</strong> Coding is basically writing instructions which can be understood by computers to accomplish certain task. Task can be anything like generating prime numbers, sending email to all employee in the organization whose email addresses are stored in excel sheet, detecting human face in given image to auto tagging person in Facebook post by recognizing face from uploaded photo.</p>
-
-<p>Learning to code <strong>increases your productivity and it is still a fun creative skill</strong>. To code, we need to know programming languages. Programming languages are basic building block for creating software. </p>
-
-<p>Programming languages allow us to write code (instructions) which can be processed or understood by computer. </p> 
-
-<p>This course uses the python programming language. Python programming language is the best <strong>first language</strong> to learn because it has <strong>simple elegant syntax and gentle learning curve</strong> (you can write and understand python code quickly and easily).</p>
-
-<p>Many universities all over the world are switching their computer science syllabus (curriculum) away from C programming language and Java programming language to Python.</p>
-
-<p>Python is powerful programming language used in the real world applications. Big companies like <strong>Google, NASA, Yahoo</strong> uses python for various task.</p>
+<p>{{object.intro}}.</p>
 
 <h2>More About Python</h2>
 
