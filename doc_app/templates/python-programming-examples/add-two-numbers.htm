@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Python Program to Find Sum of Two Numbers</title>
+<link rel="icon" type="image/ico" href="https://www.codesansar.com/themes/musu/assets/images/favicon.ico">
+
+<meta name="description" content="Python Program to Find Sum of Two Numbers">
+<meta name="keywords"	content="Python Program to Find Sum of Two Numbers">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Codesansar">
+<meta name="twitter:title" content="Python Program to Add Two Numbers">
+<meta name="twitter:description" content="Python Program to Find Sum of Two Numbers">
+<meta name="twitter:creator" content="@Codesansar">
+
+
+<meta property="og:title" content="Python Program to Add Two Numbers" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.codesansar.com/python-programming-examples/add-two-numbers.htm" />
+<meta property="og:description" content="Python Program to Find Sum of Two Numbers" />
+<meta property="og:site_name" content="Codesansar" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="canonical" href="https://www.codesansar.com/python-programming-examples/add-two-numbers.htm">
+
+<script data-ad-client="ca-pub-7016530808727939" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><link rel="stylesheet" href="https://www.codesansar.com/combine/6df6fbdde44765a0504dad200cc34b26-1589878848" media="screen,projection">
+
+<meta charset="UTF-8">
+<title>Python Program to Find Sum of Two Numbers</title>
+<link rel="icon" type="image/ico" href="https://www.codesansar.com/themes/musu/assets/images/favicon.ico">
+
+<meta name="description" content="Python Program to Find Sum of Two Numbers">
+<meta name="keywords"	content="Python Program to Find Sum of Two Numbers">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Codesansar">
+<meta name="twitter:title" content="Python Program to Add Two Numbers">
+<meta name="twitter:description" content="Python Program to Find Sum of Two Numbers">
+<meta name="twitter:creator" content="@Codesansar">
+
+
+<meta property="og:title" content="Python Program to Add Two Numbers" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.codesansar.com/python-programming-examples/add-two-numbers.htm" />
+<meta property="og:description" content="Python Program to Find Sum of Two Numbers" />
+<meta property="og:site_name" content="Codesansar" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="canonical" href="https://www.codesansar.com/python-programming-examples/add-two-numbers.htm">
+
+<script data-ad-client="ca-pub-7016530808727939" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<meta property="og:image" content="https://www.codesansar.com/storage/app/media/seo/python.png" />
+<meta name="twitter:image" content="https://www.codesansar.com/storage/app/media/seo/python.png">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146418253-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146418253-1');
+</script><script data-ad-client="ca-pub-7016530808727939" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>
+.btn-oval{
+	border-radius:20px;
+}
+
+.cs-red{
+ background-color: #8A000D; 	
+}
+
+.page	a, .leftside-list a, .rightside-list a{
+	color: #2527d7 ; !important;
+}
+
+.page hr{
+	height:16px;
+	border: none;
+	border-bottom: 1px dashed #e0e0e0;
+}
+
+.page h1{
+	padding-bottom: 12px;
+	font-size:36px;
+	font-weight: bold;
+	line-height: 48px;
+	color:#252766;
+	text-shadow: 1px 1px #e0e0e0 ;
+}
+
+.page h2{
+	padding:16px 0 24px 0;
+	font-size: 28px;
+	text-shadow: 1px 1px #e0e0e0;
+	color:#252766;
+	font-weight: bold;
+	text-align: center;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.page h3{
+	padding: 16px 0 16px 0;
+	font-size: 24px;
+	font-weight: bold;
+	color: #252766;
+	text-shadow: 1px 1px #fafafa;
+}
+.page h4{
+	padding: 16px 0 0 0;
+	line-height: 34px;
+	font-size: 22px;
+	text-shadow: 1px 1px #f5f5f5;
+	
+	color: #252730;
+	
+}
+
+.page h5{
+	line-height: 34px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #252766;
+}
+
+
+.page {
+	color: #252750;
+	font-size: 20px;	
+}
+
+.page p{
+	margin: 32px 0;
+	line-height: 30px;
+}
+
+.strong{
+	font-weight: bold;
+	font-size: 20px;
+	color:#455a64;
+}
+
+.page strong{
+	color: #25275f;
+}
+
+
+
+.box{
+	padding:8px 20px !important;
+}
+
+.mb-1{
+	margin-bottom: 8px;
+}
+
+.mb-2{
+	margin-bottom: 16px;
+}
+
+.border-white{
+	border: 2px solid white;
+}
+.pattern{
+	font-family: Monospace !important;
+	word-spacing: 0 !important;
+	font-size: 18px !important;
+	line-height: 18px !important;
+	border: 1px solid #aaaaaa ;
+	letter-spacing: 2px;
+}
+
+.fa-plus-fix:before{
+	font-size: 28px;
+	color: #d81b60;
+}
+
+#fixme {
+    position:fixed;
+    top:11%;
+    left:1%;
+    width:18%;
+    height: 80%;
+    z-index: -99;
+}
+
+.page figure{
+	padding: 12px 8px;
+}
+
+
+.leftside-active-link{
+	background-color: #fff !important;
+	border-right:4px solid red;
+}
+
+.page var{
+	color: #252750;
+	font-family: "Courier New";
+	background-color: #f5f5f5;
+	padding: 2px 8px;
+	font-weight: bold;
+	font-style: normal;
+}
+
+.page code{
+	font-family: "Courier New";
+	color:#252750;
+	padding:4px 8px;
+	font-size: 19px;
+	border-radius:5%;
+	background-color: #f5f5f5;
+}
+
+.page .disc-ul{
+	padding:0px 12px 12px 36px;
+	line-height: 40px;
+	
+}
+
+.page .disc-ul li{
+	list-style: disc;
+	border-bottom:1px solid #f5f5f5;
+}
+
+.page .dunder{
+	letter-spacing: 1px;
+	font-family: Arial;
+}
+
+.page .keyword{
+	width:100px;
+	text-transform: none;
+	font-size: 16px;
+	font-family: "Courier New";
+	font-weight: bold;
+	background-color: #fafafafa;
+	margin-bottom:0.4rem;
+}
+
+.page .note{
+	padding:1rem;
+	border-left: 4px solid #ee6e73;
+	background-color: #e3f2fd;
+}
+
+.page .note span{
+	font-family: "Courier New";
+}
+
+.page .diff {
+  background-color:#fbfbfb;
+  padding: 1rem 0.5rem 1rem 4rem;
+}
+
+.page .first{
+  counter-increment:first-counter;
+  margin-bottom: 1rem;
+}
+.page .second{
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+  counter-increment:second-counter;
+}
+
+.page .first:before{
+  content:counter(first-counter);
+  width:2rem;
+  height:2rem;
+  position:absolute;
+  background:#00897b;
+  text-align:center;
+  line-height:2rem;
+  color:#fff;
+  border-radius:50%;
+  margin-left:-3rem;
+}
+.page .second:before{
+  content:counter(first-counter);
+  width:2rem;
+  height:2rem;
+  position:absolute;
+  background:#00bcd4 ;
+  text-align:center;
+  line-height:2rem;
+  color:#fff;
+  border-radius:50%;
+  margin-left:-3rem;
+}
+
+.page .courier-font{
+	font-family: "Courier New";
+}
+
+#tocbutton{
+	position: fixed;
+	right:-15px;
+	top:65px;
+	z-index: 999;
+}
+
+
+#tocbutton ul{
+min-width: 180px;	
+}
+
+#tocbutton ul li a{
+	color: #fff;
+	font-size: 12px;
+}
+
+#tocbutton ul li a:hover{
+	background-color: #d84315 ;
+}
+
+.page-footer{
+	margin-top:-20px;
+}
+
+
+</style></head>
+
+<body>
+<nav class="teal darken-1 z-depth-0" role="navigation">
+	<div class="nav-wrapper container">
+		<a id="logo-container" href="https://www.codesansar.com" class="brand-logo">
+			<img src="https://www.codesansar.com/themes/musu/assets/images/logo.jpg" alt="CodeSansar" class="responsive-img">
+		</a>
+		<ul class="right hide-on-med-and-down">
+			<li>
+				<a href="https://www.codesansar.com/tutorials/" class="dropdown-trigger" data-target="tutorials-web-dropdown">Tutorials &#9662;</a>
+			</li>
+			<li>
+				<a href="https://www.codesansar.com/examples/" class="dropdown-trigger" data-target="examples-web-dropdown">Examples &#9662;</a>
+			</li>
+			<li><a href="https://www.codesansar.com/online-calculator/">Online Calculator </a></li>
+		</ul>
+		<ul id="nav-mobile" class="sidenav">
+			<li>
+				<a href="https://www.codesansar.com/tutorials/" class="dropdown-trigger" data-target="tutorials-mobile-dropdown">Tutorials &#9662;</a>
+				</li>
+			<li>
+				<a href="https://www.codesansar.com/examples/" class="dropdown-trigger" data-target="examples-mobile-dropdown">Examples &#9662;</a>
+			</li>
+			<li><a href="https://www.codesansar.com/online-calculator/">Online Calculator </a></li>			<li class="divider"></li>
+															    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-hello-world.htm">Hello, World!</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/add-two-numbers.htm">Add Two Numbers</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/multiply-two-numbers.htm">Multiply Two Numbers</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/convert-temperature-celsius-fahrenheit-kelvin.htm">Celsius to Fahrenheit &amp; Kelvin</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/calculate-simple-compound-interest.htm">Simple &amp; Compound Interest</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/calculate-area-perimeter-rectangle.htm">Rectangle Area &amp; Perimeter</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-area-and-circumference-circle.htm">Area and Circumference of Circle</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/calculate-area-volume-sphere.htm">Calculate Area &amp; Volume of Sphere</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/triangle-area-base-height.htm">Area of Triangle</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/calculate-area-ellipse.htm">Area of an Ellipse</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/surface-area-cone.htm">Area of Cone</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/calculate-distance-between-two-points-co-ordinates.htm">Calculate Distance Between Two Points ( Co-ordinates)</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/convert-cartesian-polar-coordinate.htm">Convert Cartesian to Polar Coordinate</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/convert-polar-cartesian-coordinate.htm">Convert Polar to Cartesian Coordinate</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/kilometer-meter.htm">Kilometer to Meter Conversion</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/convert-miles-kilometers.htm">Miles to Kilometers</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/add-two-complex-number.htm">Add Two Complex Number</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/multiply-two-complex-number.htm">Multiply Two Complex Number</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-roots-quadratic-equation.htm">Find Roots of a Quadratic Equation</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/calculate-gravitational-force.htm">Calculate Gravitational Force</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-sum-first-last-digit-number.htm">Sum of First &amp; Last Digit</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-ascii-value-character.htm">Find ASCII Value</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/convert-number-days-years-months-days.htm">Days to Years, Months &amp; Days Conversion</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/calculate-monthly-emi.htm">Calculate Monthly EMI</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/check-leap-year-naive-calendar-library.htm">Check Leap Year</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/even-or-odd.htm">Even or Odd</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/check-whether-number-even-or-odd-using-bitwise-operator.htm">Even or Odd Using Bitwise Operator</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/check-whether-number-even-or-odd-using-conditional-operator.htm">Even or Odd Using Conditional Operator</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-largest-two-numbers.htm">Largest of Two Numbers</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-smallest-two-numbers.htm">Smallest of Two Numbers</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-largest-three-numbers.htm">Largest of Three Numbers</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-smallest-three-numbers.htm">Smallest of Three Numbers</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/calculate-value-pi-using-leibniz-formula.htm">Calculate Value of PI Using Leibniz Formula</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/check-validity-triangle-given-sides.htm">Validity of Triangle Given Sides</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/check-validity-triangle-given-angles.htm">Validity of Triangle Given Angles</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/check-triangle-types-sides.htm">Check Triangle Types Given Sides</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/check-palindrome-number.htm">Python Program to Check Palindrome Number</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/check-prime-number.htm">Python Program to Check Prime Number</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-factorial-given-number.htm">Python Program to Find Factorial of a Given Number</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/reverse-given-number.htm">Python Program to Reverse a Given Number</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/calculate-hcf-gcd-lcm.htm">Python Program to Calculate HCF (GCD) &amp; LCM</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/hcf-gcd-euclidean-algorithm.htm">Python Program to Calculate HCF (GCD) by Euclidean Algorithm</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/count-number-digit.htm">Python Program to Count Number of Digit</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/armstrong-narcissistic-number.htm">Python Program to Check Armstrong (Narcissistic) Number</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/check-strong-number.htm">Python Program to Check Whether a Number is Strong or Not</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/fibonacci-series.htm">Python Program to Generate Fibonacci Series</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/check-perfect-number.htm">Python Program to Check Perfect Number</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/check-triangular-number.htm">Python Program to Check Triangular Number</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/check-co-prime-numbers.htm">Python Program to Check Co-Prime Numbers</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/check-automorphic-cyclic-number.htm">Python Program to Check Automorphic (Cyclic) Number</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/generate-prime-numbers.htm">Python Program to Generate Prime Numbers in Interval</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/generate-armstrong-narcissistic-number.htm">Python Program to Generate Armstrong (Narcissistic) Number</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/generate-strong-numbers.htm">Python Program to Generate Strong Numbers in an Interval</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/generate-perfect-numbers.htm">Python Program to Generate Perfect Numbers in an Interval</a></li>
+			    																															    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/generate-triangular-numbers.htm">Generate Triangular Numbers in an Interval</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/generate-automorphic-cyclic-numbers.htm">Generate Automorphic (Cyclic) Numbers</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/handsome-number.htm">Handsome Number Check</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/harshad-number.htm">Harshad Number Check</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/prime-factors.htm">Prime Factors</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/powerful-number.htm">Powerful Number Check</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-powerful-numbers-interval.htm">Print Powerful Number in Range</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/check-perfect-square-number.htm">Check Perfect Square</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-all-divisors-integer-number.htm">Divisors Of Given Number</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-odd-numbers-given-range.htm">Print Odd Numbers in Range</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-even-numbers-given-range.htm">Print Even Numbers in Range</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-multiplication-table-given-number.htm">Multiplication Table of Number</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-multiplication-table-1-10.htm">Multiplication Table of 1 to 10</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/number-type.htm">Types of Number</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-sum-digit-number.htm">Sum of Digit of A Number</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-sum-digit-until-number-reduces-single-digit.htm">Sum of Digit of Number Until It Reduces To Single Digit</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-ascii-table.htm">ASCII Table</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-cartesian-cross-product-2-lists.htm">Cartesian Product 2 Sets</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-cartesian-cross-product-multiple-list.htm">Cartesian Product Multiple Sets</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/generate-magic-square.htm">Generate Magic Square</a></li>
+			    																															    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/generate-right-angle-triangle-pattern-using-stars.htm">Right Angle Triangle Star Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/hollow-right-angle-triangle-pattern.htm">Hollow Right Angle Triangle Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/generate-pyramid-pattern-using-stars.htm">Star Pyramid Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/hollow-star-pyramid-pattern.htm">Hollow Star Pyramid Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/generate-inverted-pyramid-pattern-using-stars.htm">Inverted Star Pyramid Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/1-212-32123-numeric-pyramid-pattern.htm">1-212-32123 Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/1-121-12321-numeric-pyramid-pattern.htm">1-121-12321 Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-1-10-101-1010-number-pattern.htm">Print 1-10-101-1010 Number Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-0-01-010-0101-binary-number-pattern.htm">Print 0-01-010-0101 Binary Number Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-1-101-10101-binary-number-pyramid-pattern.htm">Print 1-101-10101 Binary Number Pyramid</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-0-010-01010-pyramid-number-pattern.htm">Print 0-010-01010 Binary Number Pyramid</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/generate-flag-nepal.htm">Flag of Nepal Using Star</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/generate-christmas-tree-pattern.htm">Christmas Tree Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/generate-floyds-triangle.htm">Floyd&#039;s Triangle</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/plus-star-pattern.htm">Plus Star Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/cross-star-pattern.htm">Cross Star Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/asterisk-pattern.htm">Asterisk Like Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/diamond-pattern.htm">Diamond Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/hollow-diamond-pattern.htm">Hollow Diamond Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/pascal-triangle.htm">Pascal&#039;s Triangle</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-butterfly-pattern.htm">Butterfly Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-54321-5432-543-54-5-pattern.htm">54321 5432 543 54 5 Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-1-12-123-1234-pattern.htm">1 12 123 Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-1-22-333-4444-pattern.htm">1 22 333 Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-a-ab-abc-abcd-pattern.htm">a ab abc abcd Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-a-bb-ccc-dddd-pattern.htm">a bb ccc dddd pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-A-AB-ABC-ABCD-pattern-up-to-n-lines.htm">A AB ABC ABCD Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-A-BB-CCC-DDDD-pattern-n-lines.htm">A BB CCC DDDD Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-A-BAB-CBABC-pattern.htm">A BAB CBABC Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-A-ABA-ABCBA-pattern-n-lines.htm">A ABA ABCBA Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-A-ABC-ABCDE-pattern-n-lines.htm">A ABC ABCDE Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-hollow-square-pattern.htm">Hollow Square Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-hollow-rectangular-pattern.htm">Hollow Rectangular Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-square-pattern.htm">Square Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-rectangular-pattern.htm">Rectangular Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-hour-glass-pattern.htm">Hour-glass Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-inverted-hollow-star-pyramid-pattern.htm">Inverted Hollow Star Pyramid Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/print-generate-hollow-hour-glass-pattern.htm">Hollow Hour-glass Pattern</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/plot-coordinates-plane.htm">Plot Coordinates on a Plane</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/sine-wave-using-numpy-and-matplotlib.htm">Sine Wave</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/plot-cos-wave-using-numpy-matplotlib.htm">Cos Wave</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/plot-sinc-function.htm">Sinc Function</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/plot-bessel-function.htm">Modified Bessel Function</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/plot-growing-decaying-exponential-curve.htm">Exponential Curve</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/plot-logarithmic-curve.htm">Logarithmic Curve</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/plot-circle-using-numpy-matplotlib.htm">Circle Plot</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/plot-heart-shape-using-numpy-matplotlib.htm">Heart Shape Plot</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/plot-limacon.htm">Plot Limacon</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/plot-cardioid-curve.htm">Plot Cardioid Curve</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/plot-rose-curves.htm">Plot Rose Curves</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/plot-lemniscate-curve.htm">Plot Lemniscate Curve</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-factorial-using-recursive-function.htm">Python Program to Find Factorial Using Recursive Function</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-sum-natural-numbers-recursion.htm">Sum of Natural Numbers by Recursion</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-sum-digit-using-recursive-function.htm">Sum of Digit of Number Recursion</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-sum-1-11-111-using-recursive-function.htm">Sum of 1-11-111 ... Using Recursion</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-nth-term-fibonacci-series-using-recursive-function.htm">nth term of Fibonacci series</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/calculate-power-using-recursive-function.htm">Calculate Power Using Recursion</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/hcf-gcd-recursive-function.htm">Calculate HCF (GCD) Using Recursive Function</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/reverse-number-using-recursive-function.htm">Reverse Number Using Recursive Function</a></li>
+			    																															    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-longest-word-sentence.htm">Longest Word in Sentence</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-shortest-word-sentence-or-text.htm">Shortest Word in Sentence</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-frequency-character-string.htm">Count Character Frequency in String</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-highest-frequency-character-string.htm">Highest Frequency Character in String</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/find-lowest-frequency-least-occurring-character-string.htm">Lowest Frequency Character in String</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/bitwise-and-operation-between-binary-strings-python.htm">Bitwise AND Operation Between Binary Strings</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/bitwise-or-operation-between-binary-strings-python.htm">Bitwise OR Operation Between Binary Strings</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/bitwise-xor-operation-between-binary-strings-python.htm">Bitwise XOR Operation Between Binary Strings</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/one-line-code-check-palindrome.htm">Python One Line Code To Check Palindrome</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/one-line-code-swap-two-numbers.htm">Python One Line Code To Swap Two Numbers</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/one-line-code-find-factorial.htm">Python One Line Code To Find Factorial (3 Methods)</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/sorting-dictionary-value.htm">Sorting Dictionary by Value in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/sorting-dictionary-key.htm">Sorting Dictionary by Key in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/memory-address-variables-objects.htm">Memory Address of Variables or Objects</a></li>
+			    																															    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/decorator-measure-elapsed-time.htm">Python Decorator to Measure Elapsed Time</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/logging-decorator.htm">Logging Decorator in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/memoization-decorator.htm">Memoization Decorator in Python</a></li>
+			    																															    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/number-guessing-game.htm">Simple Number Guessing Game in Python</a></li>
+			    													    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/get-execution-time-current-program.htm">Get Execution Time of Current Program</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/get-current-username-computer.htm">Get Current User of Computer</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/monty-hall-game.htm">Monty Hall Game in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/ghost-game.htm">Ghost Game in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/string-binary-sequence.htm">String to Binary Sequence</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/collatz-conjecture-sequence-generator.htm">Collatz Conjecture Sequence Generator</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/number-words-conversion-no-library-used.htm">Number to Words Conversion in Python (No Library Used)</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/remove-duplicate-items-list.htm">Remove Duplicate Items From a Python List</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/how-count-duplicate-elements-python-list.htm">How to count duplicate elements in Python list?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/check-whether-key-exist-python-dictionary-or-not.htm">Check whether key exist in Python dictionary or not?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming-examples/accuracy-floating-point-numbers.htm">Python Floating Point Accuracy</a></li>
+			    										</ul>
+		<a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="fas fa-bars white-text"></i></a>
+	</div>
+</nav>
+<ul id="tutorials-web-dropdown" class="dropdown-content">
+	<li><a href="https://www.codesansar.com/python-programming">Python Programming</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/c-programming">C Programming</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/numerical-methods">Numerical Methods</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/dart">Dart Language</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/computer-basics">Computer Basics</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/flutter">Flutter</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/linux">Linux</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/deep-learning">Deep Learning</a></li>
+</ul>
+  
+<ul id="tutorials-mobile-dropdown" class="dropdown-content">
+	<li><a href="https://www.codesansar.com/python-programming">Python Programming</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/c-programming">C Programming</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/numerical-methods">Numerical Methods</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/dart">Dart Language</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/computer-basics">Computer Basics</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/flutter">Flutter</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/linux">Linux</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/deep-learning">Deep Learning</a></li>
+</ul>
+  
+<ul id="examples-web-dropdown" class="dropdown-content">
+	<li><a href="https://www.codesansar.com/c-programming-examples">C Programming Examples</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/python-programming-examples">Python Programming Examples</a></li>
+</ul> 
+  
+<ul id="examples-mobile-dropdown" class="dropdown-content">
+	<li><a href="https://www.codesansar.com/c-programming-examples">C Programming Examples</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/python-programming-examples">Python Programming Examples</a></li>
+</ul>
+<div class="container-fluid" style="background-color:#fefefe;">
+	<div class="row">
+		<div class="col xl8 l8 m12 s12 push-xl3 push-l3">
+			<main role="main">
+				<article class="page">
+					<h1 class="center">Python Program to Add Two Numbers</h1>
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- after-title -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7016530808727939"
+     data-ad-slot="8186177242"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>					<h4>This python program adds two numbers given by user and displays the output.</h4>
+
+<p>In this python example, <strong>we first read two number from user using built-in function <code>input()</code>.</strong> Since function <code>input()</code> returns string value, we need to convert them to number type. And then, <strong>given numbers are added simply by <code>+</code> operator.</strong></p>
+
+<h2 class="light">Python Source Code: Add Two Numbers</h2>
+
+<pre><code class="language-python">
+# Python program to find
+# sum of two numbers
+
+# Reading two numbers
+number1 = input('Enter first number: ')
+number2 = input('Enter second number: ')
+
+# Converting to float
+# Conversion is required because
+# input() function return string
+number1 = float(number1)
+number2 = float(number2)
+
+# Addition
+result = number1 + number2
+
+# Displaying result
+print('Sum of %0.2f and %0.2f is %0.2f' % (number1, number2, result))
+</code></pre>
+
+<p class="flow-text">Output</p>
+<pre>
+Enter first number: 12.23
+Enter second number: 23.45
+Sum of 12.23 and 23.45 is 35.68
+</pre>					<br>
+										<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- after-article -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7016530808727939"
+     data-ad-slot="8853162473"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>									</article>
+			</main>
+					</div>
+		<div class="hide-on-med-and-down col custom-col xl3 l3 m12 s12 pull-l8 pull-xl8">
+			<div style="margin:24px 36px 24px 24px;">
+				<aside>
+																				<ul class="collapsible expandable z-depth-0">
+					<li  class="active" >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span>Basic Python Program Examples</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming-examples/print-hello-world.htm">Hello, World!</a> </li>
+																																			<li  class="leftside-active-link" ><a href="https://www.codesansar.com/python-programming-examples/add-two-numbers.htm">Add Two Numbers</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/multiply-two-numbers.htm">Multiply Two Numbers</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/convert-temperature-celsius-fahrenheit-kelvin.htm">Celsius to Fahrenheit &amp; Kelvin</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/calculate-simple-compound-interest.htm">Simple &amp; Compound Interest</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/calculate-area-perimeter-rectangle.htm">Rectangle Area &amp; Perimeter</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-area-and-circumference-circle.htm">Area and Circumference of Circle</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/calculate-area-volume-sphere.htm">Calculate Area &amp; Volume of Sphere</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/triangle-area-base-height.htm">Area of Triangle</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/calculate-area-ellipse.htm">Area of an Ellipse</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/surface-area-cone.htm">Area of Cone</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/calculate-distance-between-two-points-co-ordinates.htm">Calculate Distance Between Two Points ( Co-ordinates)</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/convert-cartesian-polar-coordinate.htm">Convert Cartesian to Polar Coordinate</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/convert-polar-cartesian-coordinate.htm">Convert Polar to Cartesian Coordinate</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/kilometer-meter.htm">Kilometer to Meter Conversion</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/convert-miles-kilometers.htm">Miles to Kilometers</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/add-two-complex-number.htm">Add Two Complex Number</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/multiply-two-complex-number.htm">Multiply Two Complex Number</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-roots-quadratic-equation.htm">Find Roots of a Quadratic Equation</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/calculate-gravitational-force.htm">Calculate Gravitational Force</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-sum-first-last-digit-number.htm">Sum of First &amp; Last Digit</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-ascii-value-character.htm">Find ASCII Value</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/convert-number-days-years-months-days.htm">Days to Years, Months &amp; Days Conversion</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/calculate-monthly-emi.htm">Calculate Monthly EMI</a> </li>
+																																			</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">If-Else &amp; Loop Examples</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming-examples/check-leap-year-naive-calendar-library.htm">Check Leap Year</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/even-or-odd.htm">Even or Odd</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/check-whether-number-even-or-odd-using-bitwise-operator.htm">Even or Odd Using Bitwise Operator</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/check-whether-number-even-or-odd-using-conditional-operator.htm">Even or Odd Using Conditional Operator</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-largest-two-numbers.htm">Largest of Two Numbers</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-smallest-two-numbers.htm">Smallest of Two Numbers</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-largest-three-numbers.htm">Largest of Three Numbers</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-smallest-three-numbers.htm">Smallest of Three Numbers</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/calculate-value-pi-using-leibniz-formula.htm">Calculate Value of PI Using Leibniz Formula</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/check-validity-triangle-given-sides.htm">Validity of Triangle Given Sides</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/check-validity-triangle-given-angles.htm">Validity of Triangle Given Angles</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/check-triangle-types-sides.htm">Check Triangle Types Given Sides</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/check-palindrome-number.htm">Python Program to Check Palindrome Number</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/check-prime-number.htm">Python Program to Check Prime Number</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-factorial-given-number.htm">Python Program to Find Factorial of a Given Number</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/reverse-given-number.htm">Python Program to Reverse a Given Number</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/calculate-hcf-gcd-lcm.htm">Python Program to Calculate HCF (GCD) &amp; LCM</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/hcf-gcd-euclidean-algorithm.htm">Python Program to Calculate HCF (GCD) by Euclidean Algorithm</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/count-number-digit.htm">Python Program to Count Number of Digit</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/armstrong-narcissistic-number.htm">Python Program to Check Armstrong (Narcissistic) Number</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/check-strong-number.htm">Python Program to Check Whether a Number is Strong or Not</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/fibonacci-series.htm">Python Program to Generate Fibonacci Series</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/check-perfect-number.htm">Python Program to Check Perfect Number</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/check-triangular-number.htm">Python Program to Check Triangular Number</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/check-co-prime-numbers.htm">Python Program to Check Co-Prime Numbers</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/check-automorphic-cyclic-number.htm">Python Program to Check Automorphic (Cyclic) Number</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/generate-prime-numbers.htm">Python Program to Generate Prime Numbers in Interval</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/generate-armstrong-narcissistic-number.htm">Python Program to Generate Armstrong (Narcissistic) Number</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/generate-strong-numbers.htm">Python Program to Generate Strong Numbers in an Interval</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/generate-perfect-numbers.htm">Python Program to Generate Perfect Numbers in an Interval</a> </li>
+																																																		<li ><a href="https://www.codesansar.com/python-programming-examples/generate-triangular-numbers.htm">Generate Triangular Numbers in an Interval</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/generate-automorphic-cyclic-numbers.htm">Generate Automorphic (Cyclic) Numbers</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/handsome-number.htm">Handsome Number Check</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/harshad-number.htm">Harshad Number Check</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/prime-factors.htm">Prime Factors</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/powerful-number.htm">Powerful Number Check</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-powerful-numbers-interval.htm">Print Powerful Number in Range</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/check-perfect-square-number.htm">Check Perfect Square</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-all-divisors-integer-number.htm">Divisors Of Given Number</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-odd-numbers-given-range.htm">Print Odd Numbers in Range</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-even-numbers-given-range.htm">Print Even Numbers in Range</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-multiplication-table-given-number.htm">Multiplication Table of Number</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-multiplication-table-1-10.htm">Multiplication Table of 1 to 10</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/number-type.htm">Types of Number</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-sum-digit-number.htm">Sum of Digit of A Number</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-sum-digit-until-number-reduces-single-digit.htm">Sum of Digit of Number Until It Reduces To Single Digit</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-ascii-table.htm">ASCII Table</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-cartesian-cross-product-2-lists.htm">Cartesian Product 2 Sets</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-cartesian-cross-product-multiple-list.htm">Cartesian Product Multiple Sets</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/generate-magic-square.htm">Generate Magic Square</a> </li>
+																																																		</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Pattern Examples</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming-examples/generate-right-angle-triangle-pattern-using-stars.htm">Right Angle Triangle Star Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/hollow-right-angle-triangle-pattern.htm">Hollow Right Angle Triangle Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/generate-pyramid-pattern-using-stars.htm">Star Pyramid Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/hollow-star-pyramid-pattern.htm">Hollow Star Pyramid Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/generate-inverted-pyramid-pattern-using-stars.htm">Inverted Star Pyramid Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/1-212-32123-numeric-pyramid-pattern.htm">1-212-32123 Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/1-121-12321-numeric-pyramid-pattern.htm">1-121-12321 Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-1-10-101-1010-number-pattern.htm">Print 1-10-101-1010 Number Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-0-01-010-0101-binary-number-pattern.htm">Print 0-01-010-0101 Binary Number Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-1-101-10101-binary-number-pyramid-pattern.htm">Print 1-101-10101 Binary Number Pyramid</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-0-010-01010-pyramid-number-pattern.htm">Print 0-010-01010 Binary Number Pyramid</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/generate-flag-nepal.htm">Flag of Nepal Using Star</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/generate-christmas-tree-pattern.htm">Christmas Tree Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/generate-floyds-triangle.htm">Floyd&#039;s Triangle</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/plus-star-pattern.htm">Plus Star Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/cross-star-pattern.htm">Cross Star Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/asterisk-pattern.htm">Asterisk Like Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/diamond-pattern.htm">Diamond Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/hollow-diamond-pattern.htm">Hollow Diamond Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/pascal-triangle.htm">Pascal&#039;s Triangle</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-butterfly-pattern.htm">Butterfly Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-54321-5432-543-54-5-pattern.htm">54321 5432 543 54 5 Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-1-12-123-1234-pattern.htm">1 12 123 Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-1-22-333-4444-pattern.htm">1 22 333 Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-a-ab-abc-abcd-pattern.htm">a ab abc abcd Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-a-bb-ccc-dddd-pattern.htm">a bb ccc dddd pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-A-AB-ABC-ABCD-pattern-up-to-n-lines.htm">A AB ABC ABCD Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-A-BB-CCC-DDDD-pattern-n-lines.htm">A BB CCC DDDD Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-A-BAB-CBABC-pattern.htm">A BAB CBABC Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-A-ABA-ABCBA-pattern-n-lines.htm">A ABA ABCBA Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-A-ABC-ABCDE-pattern-n-lines.htm">A ABC ABCDE Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-hollow-square-pattern.htm">Hollow Square Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-hollow-rectangular-pattern.htm">Hollow Rectangular Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-square-pattern.htm">Square Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-rectangular-pattern.htm">Rectangular Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-hour-glass-pattern.htm">Hour-glass Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-inverted-hollow-star-pyramid-pattern.htm">Inverted Hollow Star Pyramid Pattern</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/print-generate-hollow-hour-glass-pattern.htm">Hollow Hour-glass Pattern</a> </li>
+																																			</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Matplotlib &amp; Numpy</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming-examples/plot-coordinates-plane.htm">Plot Coordinates on a Plane</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/sine-wave-using-numpy-and-matplotlib.htm">Sine Wave</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/plot-cos-wave-using-numpy-matplotlib.htm">Cos Wave</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/plot-sinc-function.htm">Sinc Function</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/plot-bessel-function.htm">Modified Bessel Function</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/plot-growing-decaying-exponential-curve.htm">Exponential Curve</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/plot-logarithmic-curve.htm">Logarithmic Curve</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/plot-circle-using-numpy-matplotlib.htm">Circle Plot</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/plot-heart-shape-using-numpy-matplotlib.htm">Heart Shape Plot</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/plot-limacon.htm">Plot Limacon</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/plot-cardioid-curve.htm">Plot Cardioid Curve</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/plot-rose-curves.htm">Plot Rose Curves</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/plot-lemniscate-curve.htm">Plot Lemniscate Curve</a> </li>
+																																			</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Recursive Function Examples</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming-examples/find-factorial-using-recursive-function.htm">Python Program to Find Factorial Using Recursive Function</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-sum-natural-numbers-recursion.htm">Sum of Natural Numbers by Recursion</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-sum-digit-using-recursive-function.htm">Sum of Digit of Number Recursion</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-sum-1-11-111-using-recursive-function.htm">Sum of 1-11-111 ... Using Recursion</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-nth-term-fibonacci-series-using-recursive-function.htm">nth term of Fibonacci series</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/calculate-power-using-recursive-function.htm">Calculate Power Using Recursion</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/hcf-gcd-recursive-function.htm">Calculate HCF (GCD) Using Recursive Function</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/reverse-number-using-recursive-function.htm">Reverse Number Using Recursive Function</a> </li>
+																																																		</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">String Related</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming-examples/find-longest-word-sentence.htm">Longest Word in Sentence</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-shortest-word-sentence-or-text.htm">Shortest Word in Sentence</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-frequency-character-string.htm">Count Character Frequency in String</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-highest-frequency-character-string.htm">Highest Frequency Character in String</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/find-lowest-frequency-least-occurring-character-string.htm">Lowest Frequency Character in String</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/bitwise-and-operation-between-binary-strings-python.htm">Bitwise AND Operation Between Binary Strings</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/bitwise-or-operation-between-binary-strings-python.htm">Bitwise OR Operation Between Binary Strings</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/bitwise-xor-operation-between-binary-strings-python.htm">Bitwise XOR Operation Between Binary Strings</a> </li>
+																																			</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">One Line Code Examples</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming-examples/one-line-code-check-palindrome.htm">Python One Line Code To Check Palindrome</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/one-line-code-swap-two-numbers.htm">Python One Line Code To Swap Two Numbers</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/one-line-code-find-factorial.htm">Python One Line Code To Find Factorial (3 Methods)</a> </li>
+																																			</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Dictionary Examples</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming-examples/sorting-dictionary-value.htm">Sorting Dictionary by Value in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/sorting-dictionary-key.htm">Sorting Dictionary by Key in Python</a> </li>
+																																			</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Memory Related</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming-examples/memory-address-variables-objects.htm">Memory Address of Variables or Objects</a> </li>
+																																																		</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Decorator</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming-examples/decorator-measure-elapsed-time.htm">Python Decorator to Measure Elapsed Time</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/logging-decorator.htm">Logging Decorator in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/memoization-decorator.htm">Memoization Decorator in Python</a> </li>
+																																																		</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Other Examples</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming-examples/number-guessing-game.htm">Simple Number Guessing Game in Python</a> </li>
+																				<li ><a href="https://www.codesansar.com/python-programming-examples/get-execution-time-current-program.htm">Get Execution Time of Current Program</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/get-current-username-computer.htm">Get Current User of Computer</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/monty-hall-game.htm">Monty Hall Game in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/ghost-game.htm">Ghost Game in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/string-binary-sequence.htm">String to Binary Sequence</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/collatz-conjecture-sequence-generator.htm">Collatz Conjecture Sequence Generator</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/number-words-conversion-no-library-used.htm">Number to Words Conversion in Python (No Library Used)</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/remove-duplicate-items-list.htm">Remove Duplicate Items From a Python List</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/how-count-duplicate-elements-python-list.htm">How to count duplicate elements in Python list?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/check-whether-key-exist-python-dictionary-or-not.htm">Check whether key exist in Python dictionary or not?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming-examples/accuracy-floating-point-numbers.htm">Python Floating Point Accuracy</a> </li>
+															</ul>
+					</div>
+					</li>
+					</ul>
+									</aside>
+				<div>
+					<!-- Ad here -->
+				</div>	
+			</div>
+		</div>
+		<div class="hide-on-med-and-down col xl1 l1 m12 s12">
+			<div class="margin1">
+				<div>
+					<!-- Ad here -->
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- leftside -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7016530808727939"
+     data-ad-slot="1484623203"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>				</div>
+				<aside>
+									</aside>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="page-footer grey lighten-3">
+	<div class="container">
+		<div class="row">
+			<div class="col l5 s12">
+				<h5 class="grey-text text-darken-4">About Us</h5>
+				<p class="grey-text text-darken-4 footp">Codesansar is online platform that provides tutorials and examples on popular programming languages.</p>
+			</div>
+			<div class="col l4 s12">
+				<h5 class="grey-text text-darken-4">Links</h5>
+				<ul>
+					<li><a class=" btn-flat blue-text" href="https://www.codesansar.com/about-us.htm">About Us</a></li>
+					<li><a class=" btn-flat  blue-text" href="https://www.codesansar.com/contact-us.htm">Contact Us</a></li>
+					<li><a class=" btn-flat  blue-text" href="https://www.codesansar.com/privacy-policy.htm">Privacy Policy</a></li>
+					<li><a class=" btn-flat  blue-text" href="https://www.codesansar.com/cookies-policy.htm">Cookies Policy</a></li>
+				</ul>
+			</div>
+			<div class="col l3 s12 ">
+				<h5 class="grey-text text-darken-4">Social Media</h5>
+				<ul>
+					<li>
+						<a class="facebook btn-flat "  href="https://www.facebook.com/codesansar" rel="nofollow"><i class="fab fa-facebook"></i>  Facebook</a>
+					</li>
+					<li>
+						<a class="twitter btn-flat "  href="https://www.twitter.com/codesansar" rel="nofollow"><i class="fab fa-twitter"></i> Twitter</a>
+					</li>
+					<li>
+						<a class="youtube  btn-flat " href="https://www.youtube.com/channel/UCxg2Q0krbG2_BA6L_PC93sg" rel="nofollow"><i class="fab fa-youtube"></i> Youtube</a>
+					</li>
+					<li>
+						<a class="github btn-flat " href="https://github.com/codesansar" rel="nofollow"><i class="fab fa-github"></i> Github</a>
+					</li>
+					<li>
+						<a class="instagram btn-flat " href="https://www.instagram.com/codesansar" rel="nofollow"><i class="fab fa-instagram"></i> Instagram</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright teal darken-1">
+		<div class="container white-text center">
+			&copy; 2023 Codesansar. All Rights Reserved.
+		</div>
+	</div>
+</footer><div id="scroll-top-floating" class="fixed-action-btn" style="display:none">
+  <a class="btn-floating white z-depth-0" onclick="topFunction()">
+    <i class="fas fa-arrow-up cs-red white-text"></i>
+  </a>
+</div><script>
+	var scrollbutton = document.getElementById("scroll-top-floating");
+
+//var tocbutton = document.getElementById("tocbutton");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+    scrollbutton.style.display = "block";
+    /*try{
+    	tocbutton.style.display = "block";
+    }catch{}*/
+  } else {
+    scrollbutton.style.display = "none";
+    /*try{
+    	tocbutton.style.display = "none";
+    }catch{}*/
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}</script>
+<script src="https://www.codesansar.com/combine/04eec2a64e333ab70c601af1399aafed-1585042052"></script>
+<script src="https://www.codesansar.com/themes/musu/assets/js/prism.js"></script>
+</body>
+</html>

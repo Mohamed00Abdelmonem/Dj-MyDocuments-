@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="stylesheet" href="https://www.codesansar.com/combine/6df6fbdde44765a0504dad200cc34b26-1589878848" media="screen,projection">
+
+<meta charset="UTF-8">
+<title>How to implement (Emulate) do-while like Loop in Python?</title>
+<link rel="icon" type="image/ico" href="https://www.codesansar.com/themes/musu/assets/images/favicon.ico">
+
+<meta name="description" content="Since there is no do-while loop in python like in C. This post illustrates how to achieve that feature in python programming language.">
+<meta name="keywords"	content="do-while Like Loop in Python">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Codesansar">
+<meta name="twitter:title" content="How to implement (Emulate) do-while like Loop in Python?">
+<meta name="twitter:description" content="Since there is no do-while loop in python like in C. This post illustrates how to achieve that feature in python programming language.">
+<meta name="twitter:creator" content="@Codesansar">
+
+
+<meta property="og:title" content="How to implement (Emulate) do-while like Loop in Python?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.codesansar.com/python-programming/do-while-loop-python.htm" />
+<meta property="og:description" content="Since there is no do-while loop in python like in C. This post illustrates how to achieve that feature in python programming language." />
+<meta property="og:site_name" content="Codesansar" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="canonical" href="https://www.codesansar.com/python-programming/do-while-loop-python.htm">
+
+<script data-ad-client="ca-pub-7016530808727939" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<meta property="og:image" content="https://www.codesansar.com/storage/app/media/seo/python.png" />
+<meta name="twitter:image" content="https://www.codesansar.com/storage/app/media/seo/python.png">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146418253-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146418253-1');
+</script><script data-ad-client="ca-pub-7016530808727939" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><style>
+.btn-oval{
+	border-radius:20px;
+}
+
+.cs-red{
+ background-color: #8A000D; 	
+}
+
+.page	a, .leftside-list a, .rightside-list a{
+	color: #2527d7 ; !important;
+}
+
+.page hr{
+	height:16px;
+	border: none;
+	border-bottom: 1px dashed #e0e0e0;
+}
+
+.page h1{
+	padding-bottom: 12px;
+	font-size:36px;
+	font-weight: bold;
+	line-height: 48px;
+	color:#252766;
+	text-shadow: 1px 1px #e0e0e0 ;
+}
+
+.page h2{
+	padding:16px 0 24px 0;
+	font-size: 28px;
+	text-shadow: 1px 1px #e0e0e0;
+	color:#252766;
+	font-weight: bold;
+	text-align: center;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.page h3{
+	padding: 16px 0 16px 0;
+	font-size: 24px;
+	font-weight: bold;
+	color: #252766;
+	text-shadow: 1px 1px #fafafa;
+}
+.page h4{
+	padding: 16px 0 0 0;
+	line-height: 34px;
+	font-size: 22px;
+	text-shadow: 1px 1px #f5f5f5;
+	
+	color: #252730;
+	
+}
+
+.page h5{
+	line-height: 34px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #252766;
+}
+
+
+.page {
+	color: #252750;
+	font-size: 20px;	
+}
+
+.page p{
+	margin: 32px 0;
+	line-height: 30px;
+}
+
+.strong{
+	font-weight: bold;
+	font-size: 20px;
+	color:#455a64;
+}
+
+.page strong{
+	color: #25275f;
+}
+
+
+
+.box{
+	padding:8px 20px !important;
+}
+
+.mb-1{
+	margin-bottom: 8px;
+}
+
+.mb-2{
+	margin-bottom: 16px;
+}
+
+.border-white{
+	border: 2px solid white;
+}
+.pattern{
+	font-family: Monospace !important;
+	word-spacing: 0 !important;
+	font-size: 18px !important;
+	line-height: 18px !important;
+	border: 1px solid #aaaaaa ;
+	letter-spacing: 2px;
+}
+
+.fa-plus-fix:before{
+	font-size: 28px;
+	color: #d81b60;
+}
+
+#fixme {
+    position:fixed;
+    top:11%;
+    left:1%;
+    width:18%;
+    height: 80%;
+    z-index: -99;
+}
+
+.page figure{
+	padding: 12px 8px;
+}
+
+
+.leftside-active-link{
+	background-color: #fff !important;
+	border-right:4px solid red;
+}
+
+.page var{
+	color: #252750;
+	font-family: "Courier New";
+	background-color: #f5f5f5;
+	padding: 2px 8px;
+	font-weight: bold;
+	font-style: normal;
+}
+
+.page code{
+	font-family: "Courier New";
+	color:#252750;
+	padding:4px 8px;
+	font-size: 19px;
+	border-radius:5%;
+	background-color: #f5f5f5;
+}
+
+.page .disc-ul{
+	padding:0px 12px 12px 36px;
+	line-height: 40px;
+	
+}
+
+.page .disc-ul li{
+	list-style: disc;
+	border-bottom:1px solid #f5f5f5;
+}
+
+.page .dunder{
+	letter-spacing: 1px;
+	font-family: Arial;
+}
+
+.page .keyword{
+	width:100px;
+	text-transform: none;
+	font-size: 16px;
+	font-family: "Courier New";
+	font-weight: bold;
+	background-color: #fafafafa;
+	margin-bottom:0.4rem;
+}
+
+.page .note{
+	padding:1rem;
+	border-left: 4px solid #ee6e73;
+	background-color: #e3f2fd;
+}
+
+.page .note span{
+	font-family: "Courier New";
+}
+
+.page .diff {
+  background-color:#fbfbfb;
+  padding: 1rem 0.5rem 1rem 4rem;
+}
+
+.page .first{
+  counter-increment:first-counter;
+  margin-bottom: 1rem;
+}
+.page .second{
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+  counter-increment:second-counter;
+}
+
+.page .first:before{
+  content:counter(first-counter);
+  width:2rem;
+  height:2rem;
+  position:absolute;
+  background:#00897b;
+  text-align:center;
+  line-height:2rem;
+  color:#fff;
+  border-radius:50%;
+  margin-left:-3rem;
+}
+.page .second:before{
+  content:counter(first-counter);
+  width:2rem;
+  height:2rem;
+  position:absolute;
+  background:#00bcd4 ;
+  text-align:center;
+  line-height:2rem;
+  color:#fff;
+  border-radius:50%;
+  margin-left:-3rem;
+}
+
+.page .courier-font{
+	font-family: "Courier New";
+}
+
+#tocbutton{
+	position: fixed;
+	right:-15px;
+	top:65px;
+	z-index: 999;
+}
+
+
+#tocbutton ul{
+min-width: 180px;	
+}
+
+#tocbutton ul li a{
+	color: #fff;
+	font-size: 12px;
+}
+
+#tocbutton ul li a:hover{
+	background-color: #d84315 ;
+}
+
+.page-footer{
+	margin-top:-20px;
+}
+
+
+</style></head>
+
+<body>
+<nav class="teal darken-1 z-depth-0" role="navigation">
+	<div class="nav-wrapper container">
+		<a id="logo-container" href="https://www.codesansar.com" class="brand-logo">
+			<img src="https://www.codesansar.com/themes/musu/assets/images/logo.jpg" alt="CodeSansar" class="responsive-img">
+		</a>
+		<ul class="right hide-on-med-and-down">
+			<li>
+				<a href="https://www.codesansar.com/tutorials/" class="dropdown-trigger" data-target="tutorials-web-dropdown">Tutorials &#9662;</a>
+			</li>
+			<li>
+				<a href="https://www.codesansar.com/examples/" class="dropdown-trigger" data-target="examples-web-dropdown">Examples &#9662;</a>
+			</li>
+			<li><a href="https://www.codesansar.com/online-calculator/">Online Calculator </a></li>
+		</ul>
+		<ul id="nav-mobile" class="sidenav">
+			<li>
+				<a href="https://www.codesansar.com/tutorials/" class="dropdown-trigger" data-target="tutorials-mobile-dropdown">Tutorials &#9662;</a>
+				</li>
+			<li>
+				<a href="https://www.codesansar.com/examples/" class="dropdown-trigger" data-target="examples-mobile-dropdown">Examples &#9662;</a>
+			</li>
+			<li><a href="https://www.codesansar.com/online-calculator/">Online Calculator </a></li>			<li class="divider"></li>
+															    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/fundamental-or-primitive-data-types.htm">Fundamental Data Types in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/understanding-try-except-else-construct.htm">Understanding try except else Construct in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/understanding-range-function.htm">Understanding range() Function in Python with Examples</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/generating-random-numbers-random-module.htm">Generating Random Numbers in Python (random Module)</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/booleans-logical-data-types.htm">Booleans in Python (Logical Data Types)</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/physical-vs-logical-new-lines.htm">Physical and Logical New Lines in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/built-in-constants.htm">Built-in Constants in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/naming-convention-python.htm">Identifier Naming Conventions in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/complex-data-type.htm">Understanding Complex Data Type in Python</a></li>
+			    																																								    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/bitwise-operators.htm">Bitwise Operators in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/chaining-comparison-operators.htm">Chaining Comparison Operators in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/ternary-or-conditional-operator.htm">Ternary or Conditional Operator in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/augmented-assignment-operators.htm">Augmented Assignment Operators in Python with Examples</a></li>
+			    																																																	    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/do-while-loop-python.htm">do-while Like Loop in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/reverse-loop-python.htm">Implementing Reverse Loop in Python</a></li>
+			    																																								    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/recursive-function-python.htm">Recursive Function in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/demystifying-lambda-anonymous-function.htm">Lambda (Anonymous) Function in Python</a></li>
+			    																															    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/string-methods.htm">All String Methods in Python</a></li>
+			    													    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/string-length.htm">String Length</a></li>
+			    																															    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/working-csv-file-reading-writing.htm">Working with CSV File in Python (Reading &amp; Writing)</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/opening-web-browser.htm">Opening The Web Browser Using Python</a></li>
+			    																															    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/closures.htm">Closures in Python with Example</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/closures-applications.htm">Closure Applications</a></li>
+			    																																								    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/decorators.htm">Decorators in Python with Examples</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/decorator-applications.htm">Decorator Applications</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/decorator-parameters-factory.htm">Decorator Factory</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/decorator-class.htm">Decorator Class</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/decorating-class-using-monkey-patching.htm">Decorating Class by Monkey Patching</a></li>
+			    																																								    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/integer-interning.htm">Integer Interning in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/string-interning.htm">String Interning</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/peephole-optimization.htm">Peephole Optimization</a></li>
+			    																																								    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/packing-unpacking-extended-unpacking-tuple.htm">Packing &amp; Unpacking of Tuple</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/named-tuples.htm">Named Tuples</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/modifying-extending-named-tuples.htm">Modifying &amp; Extending Named Tuples</a></li>
+			    																															    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/abs.htm">Python abs()</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/all.htm">Python all()</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/list-comprehension-examples.htm">List Comprehension in Python With Examples</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/how-to-clone-or-copy-list.htm">How to Clone or Copy List?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/convert-list-of-lists-to-flat-list.htm">How to convert List of Lists to Flat List?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/how-to-split-list-to-evenly-sized-chunks.htm">How to Split Python List to Evenly Sized Chunks?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/how-to-iterate-through-two-lists-in-parallel.htm">How to iterate through two Python lists in parallel?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/how-to-remove-duplicates-from-list-preserving-order.htm">How to Uniquify a List?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/how-to-concatenate-two-lists-in-python.htm">How to concatenate two lists in Python?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/what-does-it-take-be-expert-python.htm">What does it take be expert at python?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/dunder-magic-double-underscore-or-data-models.htm">Dunder Methods in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/type-hierarchy.htm">Type Hierarchy in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/reference-counting.htm">Reference Counting Techniques with Example</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/circular-references.htm">Circular References in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/garbage-collection.htm">Garbage Collection in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/unboundlocalerror-example.htm">UnboundLocalError in Python with Example</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/nonlocal-scope-example.htm">nonlocal Scope in Python with Example</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/local-global-free-variables-example.htm">Global, Local &amp; Free Variables in Python with Example</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/monkey-patching.htm">Monkey Patching</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/json-to-object.htm">JSON to Python Object</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/tuples-lists-strings-comparison.htm">Tuple, List &amp; String Comparison</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/ordered-vs-unordered.htm">Ordered vs Unordered Collection</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/selection-sort.htm">Selection Sort Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/catch-display-exception-examples.htm">Catch &amp; Display Exception in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/aliasing.htm">Aliasing in Python</a></li>
+			    																															    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/draw-comparison-between-range-and-xrange.htm">Draw Comparison between range() and  xrange()</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/explain-inheritance-and-its-various-types.htm">Explain Inheritance &amp; Its Various Types</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/how-will-you-differentiate-between-shallow-copy-and-deep-copy.htm">Python Shallow vs Deep Copy</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/what-is-pickling-and-unpickling.htm">Pickling &amp; Unpickling in Python</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/what-are-args-kwargs-and-why-would-we-use-it.htm">What are *args &amp; **kwargs? And why would we use it?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/what-is-lambda-in-python.htm">What is lambda in Python?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/what-are-metaclasses-in-python.htm">What are metaclasses in Python?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/what-are-decorators-in-python.htm">What are decorators in Python?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/what-are-different-data-types-python.htm">What are the different Data Types in Python?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/what-are-mutable-and-immutable-data-types.htm">What are mutable and immutable data types in Python?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/what-are-differences-between-lists-and-tuples.htm">What are the differences between Lists and Tuples?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/which-one-faster-access-list-or-tuple-and-why.htm">Which one is faster to access list or a tuple and why?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/what-is-list-comprehension.htm">What is List Comprehension in Python?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/what-is-the-use-of-negative-indexing-in-the-list.htm">What is the use of negative indexing in the list?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/write-decorator-add-dollar-sign-number.htm">Write a decorator to add a ‘$’ sign to a number.</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/what-are-generators-python.htm">What are generators in Python?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/what-is-context-manager-in-python.htm">What is context manager in Python?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/what-are-magic-methods-python.htm">What are MAGIC methods in Python?</a></li>
+			    																						    		<li class="sidelink"><a href="https://www.codesansar.com/python-programming/how-sets-are-internally-stored-python.htm">How SETS are internally stored in Python?</a></li>
+			    										</ul>
+		<a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="fas fa-bars white-text"></i></a>
+	</div>
+</nav>
+
+<ul id="tutorials-web-dropdown" class="dropdown-content">
+	<li><a href="https://www.codesansar.com/python-programming">Python Programming</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/c-programming">C Programming</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/numerical-methods">Numerical Methods</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/dart">Dart Language</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/computer-basics">Computer Basics</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/flutter">Flutter</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/linux">Linux</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/deep-learning">Deep Learning</a></li>
+</ul>
+  
+<ul id="tutorials-mobile-dropdown" class="dropdown-content">
+	<li><a href="https://www.codesansar.com/python-programming">Python Programming</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/c-programming">C Programming</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/numerical-methods">Numerical Methods</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/dart">Dart Language</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/computer-basics">Computer Basics</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/flutter">Flutter</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/linux">Linux</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/deep-learning">Deep Learning</a></li>
+</ul>
+  
+<ul id="examples-web-dropdown" class="dropdown-content">
+	<li><a href="https://www.codesansar.com/c-programming-examples">C Programming Examples</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/python-programming-examples">Python Programming Examples</a></li>
+</ul> 
+  
+<ul id="examples-mobile-dropdown" class="dropdown-content">
+	<li><a href="https://www.codesansar.com/c-programming-examples">C Programming Examples</a></li>
+	<li class="divider"></li>
+	<li><a href="https://www.codesansar.com/python-programming-examples">Python Programming Examples</a></li>
+</ul>
+<div class="container-fluid" style="background-color:#fafafa;">
+	<div class="row">
+		<div class="col xl8 l8 m12 s12 push-xl3 push-l3">
+			<main role="main">
+				<article class="page">
+					<h1 class="center">How to implement (Emulate) do-while like Loop in Python?</h1>
+										<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- after-title -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7016530808727939"
+     data-ad-slot="8186177242"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>										<p class="right-align"><a class="btn btn-flat red white-text dropdown-trigger" data-target="toc">Table of Contents</a></p>
+
+<ul id="toc" class="dropdown-content">
+  <li><a href="#syntax">do-while Syntax</a></li>
+  <li><a href="#example"> do-while Example</a></li>
+  <li><a href="#output">do-while Output</a></li>
+</ul>
+
+<p>Since there is no do-while loop in python like in C / C++ programming language. <strong>The key features of a do-while loop is body of the loop always executes at least once even if the initial condition is FALSE.</strong></p>
+
+<p><strong>do-while loop is very handy</strong> when we need to execute body of loop at least once. So, In this article we will discuss about how to <strong>emulate do-while like feature</strong> in python programming language.</p>
+
+<h2 id="syntax">Emulating do-while Loop in Python</h2>
+
+<pre><code class="language-python">
+condition = True
+
+while condition:
+	# body of loop here 
+	condition = loop_test_condition
+</code></pre>
+
+<h2 id="example">do-while Example</h2>
+
+<pre><code class="language-python">
+count = 1
+
+condition = True
+
+while condition:
+    print('Welcome to python - %d' % count)
+    count = count + 1
+    condition = count <= 5
+</code></pre>
+
+<h2 id="output">do while output</h2>
+<pre>
+Welcome to python - 1
+Welcome to python - 2
+Welcome to python - 3
+Welcome to python - 4
+Welcome to python - 5
+</pre>										<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- after-article -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7016530808727939"
+     data-ad-slot="8853162473"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>									</article>
+			</main>
+					</div>
+		<div class="hide-on-med-and-down col custom-col xl3 l3 m12 s12 pull-l8 pull-xl8">
+			<div style="margin:24px 36px 36px 24px;">
+				<aside>
+																				<ul class="collapsible expandable z-depth-0">
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span>Python Basic</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming/fundamental-or-primitive-data-types.htm">Fundamental Data Types in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/understanding-try-except-else-construct.htm">Understanding try except else Construct in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/understanding-range-function.htm">Understanding range() Function in Python with Examples</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/generating-random-numbers-random-module.htm">Generating Random Numbers in Python (random Module)</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/booleans-logical-data-types.htm">Booleans in Python (Logical Data Types)</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/physical-vs-logical-new-lines.htm">Physical and Logical New Lines in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/built-in-constants.htm">Built-in Constants in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/naming-convention-python.htm">Identifier Naming Conventions in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/complex-data-type.htm">Understanding Complex Data Type in Python</a> </li>
+																																																																	</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Python Operators</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming/bitwise-operators.htm">Bitwise Operators in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/chaining-comparison-operators.htm">Chaining Comparison Operators in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/ternary-or-conditional-operator.htm">Ternary or Conditional Operator in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/augmented-assignment-operators.htm">Augmented Assignment Operators in Python with Examples</a> </li>
+																																																																																</ul>
+					</div>
+					</li>
+					<li  class="active" >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Python Loops</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li  class="leftside-active-link" ><a href="https://www.codesansar.com/python-programming/do-while-loop-python.htm">do-while Like Loop in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/reverse-loop-python.htm">Implementing Reverse Loop in Python</a> </li>
+																																																																	</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Python Function</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming/recursive-function-python.htm">Recursive Function in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/demystifying-lambda-anonymous-function.htm">Lambda (Anonymous) Function in Python</a> </li>
+																																																		</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Python String</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming/string-methods.htm">All String Methods in Python</a> </li>
+																				<li ><a href="https://www.codesansar.com/python-programming/string-length.htm">String Length</a> </li>
+																																																		</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Python Files</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming/working-csv-file-reading-writing.htm">Working with CSV File in Python (Reading &amp; Writing)</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/opening-web-browser.htm">Opening The Web Browser Using Python</a> </li>
+																																																		</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Python Closures</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming/closures.htm">Closures in Python with Example</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/closures-applications.htm">Closure Applications</a> </li>
+																																																																	</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Python Decorators</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming/decorators.htm">Decorators in Python with Examples</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/decorator-applications.htm">Decorator Applications</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/decorator-parameters-factory.htm">Decorator Factory</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/decorator-class.htm">Decorator Class</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/decorating-class-using-monkey-patching.htm">Decorating Class by Monkey Patching</a> </li>
+																																																																	</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Python Optimization</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming/integer-interning.htm">Integer Interning in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/string-interning.htm">String Interning</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/peephole-optimization.htm">Peephole Optimization</a> </li>
+																																																																	</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Python Tuples</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming/packing-unpacking-extended-unpacking-tuple.htm">Packing &amp; Unpacking of Tuple</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/named-tuples.htm">Named Tuples</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/modifying-extending-named-tuples.htm">Modifying &amp; Extending Named Tuples</a> </li>
+																																																		</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Builtin Functions</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming/abs.htm">Python abs()</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/all.htm">Python all()</a> </li>
+																																			</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Python Lists</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming/list-comprehension-examples.htm">List Comprehension in Python With Examples</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/how-to-clone-or-copy-list.htm">How to Clone or Copy List?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/convert-list-of-lists-to-flat-list.htm">How to convert List of Lists to Flat List?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/how-to-split-list-to-evenly-sized-chunks.htm">How to Split Python List to Evenly Sized Chunks?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/how-to-iterate-through-two-lists-in-parallel.htm">How to iterate through two Python lists in parallel?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/how-to-remove-duplicates-from-list-preserving-order.htm">How to Uniquify a List?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/how-to-concatenate-two-lists-in-python.htm">How to concatenate two lists in Python?</a> </li>
+																																			</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Advanced Python</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming/what-does-it-take-be-expert-python.htm">What does it take be expert at python?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/dunder-magic-double-underscore-or-data-models.htm">Dunder Methods in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/type-hierarchy.htm">Type Hierarchy in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/reference-counting.htm">Reference Counting Techniques with Example</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/circular-references.htm">Circular References in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/garbage-collection.htm">Garbage Collection in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/unboundlocalerror-example.htm">UnboundLocalError in Python with Example</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/nonlocal-scope-example.htm">nonlocal Scope in Python with Example</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/local-global-free-variables-example.htm">Global, Local &amp; Free Variables in Python with Example</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/monkey-patching.htm">Monkey Patching</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/json-to-object.htm">JSON to Python Object</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/tuples-lists-strings-comparison.htm">Tuple, List &amp; String Comparison</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/ordered-vs-unordered.htm">Ordered vs Unordered Collection</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/selection-sort.htm">Selection Sort Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/catch-display-exception-examples.htm">Catch &amp; Display Exception in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/aliasing.htm">Aliasing in Python</a> </li>
+																																																		</ul>
+					</div>
+					</li>
+					<li >
+					<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">Interview Question</span>
+					</div>
+					<div class="collapsible-body white">
+					<ul class="leftside-list">
+					<li ><a href="https://www.codesansar.com/python-programming/draw-comparison-between-range-and-xrange.htm">Draw Comparison between range() and  xrange()</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/explain-inheritance-and-its-various-types.htm">Explain Inheritance &amp; Its Various Types</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/how-will-you-differentiate-between-shallow-copy-and-deep-copy.htm">Python Shallow vs Deep Copy</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/what-is-pickling-and-unpickling.htm">Pickling &amp; Unpickling in Python</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/what-are-args-kwargs-and-why-would-we-use-it.htm">What are *args &amp; **kwargs? And why would we use it?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/what-is-lambda-in-python.htm">What is lambda in Python?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/what-are-metaclasses-in-python.htm">What are metaclasses in Python?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/what-are-decorators-in-python.htm">What are decorators in Python?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/what-are-different-data-types-python.htm">What are the different Data Types in Python?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/what-are-mutable-and-immutable-data-types.htm">What are mutable and immutable data types in Python?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/what-are-differences-between-lists-and-tuples.htm">What are the differences between Lists and Tuples?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/which-one-faster-access-list-or-tuple-and-why.htm">Which one is faster to access list or a tuple and why?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/what-is-list-comprehension.htm">What is List Comprehension in Python?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/what-is-the-use-of-negative-indexing-in-the-list.htm">What is the use of negative indexing in the list?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/write-decorator-add-dollar-sign-number.htm">Write a decorator to add a ‘$’ sign to a number.</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/what-are-generators-python.htm">What are generators in Python?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/what-is-context-manager-in-python.htm">What is context manager in Python?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/what-are-magic-methods-python.htm">What are MAGIC methods in Python?</a> </li>
+																																			<li ><a href="https://www.codesansar.com/python-programming/how-sets-are-internally-stored-python.htm">How SETS are internally stored in Python?</a> </li>
+															</ul>
+					</div>
+					</li>
+					</ul>
+									</aside>
+				<div>
+					<!-- Ad here -->
+				</div>	
+			</div>
+		</div>
+		<div class="hide-on-med-and-down col xl1 l1 m12 s12">
+			<div class="margin1">
+				<div>
+					<!-- Ad here -->
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- leftside -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7016530808727939"
+     data-ad-slot="1484623203"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>				</div>
+				<aside>
+									</aside>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="page-footer grey lighten-3">
+	<div class="container">
+		<div class="row">
+			<div class="col l5 s12">
+				<h5 class="grey-text text-darken-4">About Us</h5>
+				<p class="grey-text text-darken-4 footp">Codesansar is online platform that provides tutorials and examples on popular programming languages.</p>
+			</div>
+			<div class="col l4 s12">
+				<h5 class="grey-text text-darken-4">Links</h5>
+				<ul>
+					<li><a class=" btn-flat blue-text" href="https://www.codesansar.com/about-us.htm">About Us</a></li>
+					<li><a class=" btn-flat  blue-text" href="https://www.codesansar.com/contact-us.htm">Contact Us</a></li>
+					<li><a class=" btn-flat  blue-text" href="https://www.codesansar.com/privacy-policy.htm">Privacy Policy</a></li>
+					<li><a class=" btn-flat  blue-text" href="https://www.codesansar.com/cookies-policy.htm">Cookies Policy</a></li>
+				</ul>
+			</div>
+			<div class="col l3 s12 ">
+				<h5 class="grey-text text-darken-4">Social Media</h5>
+				<ul>
+					<li>
+						<a class="facebook btn-flat "  href="https://www.facebook.com/codesansar" rel="nofollow"><i class="fab fa-facebook"></i>  Facebook</a>
+					</li>
+					<li>
+						<a class="twitter btn-flat "  href="https://www.twitter.com/codesansar" rel="nofollow"><i class="fab fa-twitter"></i> Twitter</a>
+					</li>
+					<li>
+						<a class="youtube  btn-flat " href="https://www.youtube.com/channel/UCxg2Q0krbG2_BA6L_PC93sg" rel="nofollow"><i class="fab fa-youtube"></i> Youtube</a>
+					</li>
+					<li>
+						<a class="github btn-flat " href="https://github.com/codesansar" rel="nofollow"><i class="fab fa-github"></i> Github</a>
+					</li>
+					<li>
+						<a class="instagram btn-flat " href="https://www.instagram.com/codesansar" rel="nofollow"><i class="fab fa-instagram"></i> Instagram</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright teal darken-1">
+		<div class="container white-text center">
+			&copy; 2023 Codesansar. All Rights Reserved.
+		</div>
+	</div>
+</footer><div id="scroll-top-floating" class="fixed-action-btn" style="display:none">
+  <a class="btn-floating white z-depth-0" onclick="topFunction()">
+    <i class="fas fa-arrow-up cs-red white-text"></i>
+  </a>
+</div><script>
+	var scrollbutton = document.getElementById("scroll-top-floating");
+
+//var tocbutton = document.getElementById("tocbutton");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+    scrollbutton.style.display = "block";
+    /*try{
+    	tocbutton.style.display = "block";
+    }catch{}*/
+  } else {
+    scrollbutton.style.display = "none";
+    /*try{
+    	tocbutton.style.display = "none";
+    }catch{}*/
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}</script>
+<script src="https://www.codesansar.com/combine/04eec2a64e333ab70c601af1399aafed-1585042052"></script>
+<script src="https://www.codesansar.com/themes/musu/assets/js/prism.js"></script>
+</body>
+</html>
