@@ -9,10 +9,10 @@
 		<div class="col xl8 l8 m12 s12 push-xl3 push-l3">
 			<main role="main">
 				<article class="page">
-					<h1 class="center">{{object.title}}</h1>
+					<h1 class="center">{{data.title}}</h1>
 
 
-<p>{{object.intro}}.</p>
+<p>{{data.intro}}.</p>
 
 <h2>More About Python</h2>
 
@@ -59,7 +59,9 @@ Welcome to Python!
 																				<ul class="collapsible expandable z-depth-0">
 				
                 <!-- Subjects -->
-
+				{% if subject_list %}
+				<!-- Your for loop here -->
+			
 					 {% for subject in subject_list %}
 					<li >
 					<div class="collapsible-header grey lighten-3 black-text">
@@ -67,14 +69,19 @@ Welcome to Python!
 					</div>
 					<div class="collapsible-body white">
 					<ul class="leftside-list">
-					<li ><a href="https://www.codesansar.com/python-programming/do-while-loop-python.htm">{{subject.title}}</a> </li>
+					<li ><a href="{{subject.id}}/{{subject.id}}">{{subject.title}}</a> </li>
 					</ul>
 					</div>
 					</li>
 					{% endfor %}
 					</ul>
 				</aside>
+				{% else %}
+				<div class="collapsible-header grey lighten-3 black-text">
+					<span class="leftside-header">No Topic available.</span>
+				</div>
 
+			{% endif %}
 
                 <!-- End subject -->
 

@@ -16,6 +16,7 @@ class Section(models.Model):
 class Subject(models.Model):
     section = models.ForeignKey(Section, on_delete=models.SET_NULL,null=True, related_name='subject_section')
     title = models.CharField(max_length=100)
+    content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null= True)
     created_at = models.DateTimeField(default=timezone.now)
 
@@ -24,12 +25,11 @@ class Subject(models.Model):
     
 
 
-class detail_subject(models.Model):
-    subject = models.ForeignKey(Subject, on_delete=models.SET_NULL,null=True, related_name='detail_subject_subject')
-    content = models.TextField()
-    author = models.ForeignKey(User, on_delete=models.SET_NULL, null= True)
-    created_at = models.DateTimeField(default=timezone.now)
+# class detail_subject(models.Model):
+#     subject = models.ForeignKey(Subject, on_delete=models.SET_NULL,null=True, related_name='detail_subject_subject')
+#     author = models.ForeignKey(User, on_delete=models.SET_NULL, null= True)
+#     created_at = models.DateTimeField(default=timezone.now)
 
-    def __str__(self) -> str:
-        return self.content.split()[:10]
+#     def __str__(self) -> str:
+#         return self.content.split()[:10]
     

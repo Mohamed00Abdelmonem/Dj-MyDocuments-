@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import detail_subject, Subject, Section
-from django.views.generic import ListView, DeleteView
+from .models import Subject, Section
+from django.views.generic import ListView, DetailView
 
 # Create your views here.
 class Section_List(ListView):
@@ -8,17 +8,14 @@ class Section_List(ListView):
     template_name = 'index.html'
 
 
-class Section_Detail(DeleteView):
-    model = Section
-    template_name = 'python-programming.html'
-    context_object_name = 'object'
-
-# class Subject_List(ListView):
-#     model = Subject
-#     template_name = 'python-programming.html'
-#     context_object_name = 'subject_list'
 
 def Subject_list(request, id):
     data = Section.objects.get(id=id)
     subject = Subject.objects.filter(section=data)
-    return render(request, 'python-programming.html', {'subject_list':subject})
+    return render(request, 'python-programming.html', {'subject_list':subject, 'data':data})
+
+
+
+class Subject_Detail(DetailView):
+    model = Subject
+    template_name = 'topic_detail.html'
