@@ -8,13 +8,17 @@ class Section_List(ListView):
     template_name = 'index.html'
 
 
-# def index(request):
-#     return render(request, 'index.html')
-
 class Section_Detail(DeleteView):
     model = Section
     template_name = 'python-programming.html'
+    context_object_name = 'object'
 
+# class Subject_List(ListView):
+#     model = Subject
+#     template_name = 'python-programming.html'
+#     context_object_name = 'subject_list'
 
-# def section(request):
-#     return render(request, 'python-programming.html')
+def Subject_list(request, id):
+    data = Section.objects.get(id=id)
+    subject = Subject.objects.filter(section=data)
+    return render(request, 'python-programming.html', {'subject_list':subject})

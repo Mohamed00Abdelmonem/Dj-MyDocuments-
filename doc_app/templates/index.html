@@ -1,65 +1,9 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-<meta charset="UTF-8">
-<title>My Doc</title>
-<link rel="icon" type="image/ico" href="https://www.codesansar.com/themes/musu/assets/images/favicon.ico">
-<!-- 
-<meta name="description" content="Learn programming languages C, C++ and Python from scratch using our tutorials and examples.">
-<meta name="keywords"	content="Programming, Learn to Code, Learn Programming, CodeSansar"> -->
-
-<script data-ad-client="ca-pub-7016530808727939" async src="{%static 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' %}"></script><link rel="stylesheet" href="https://www.codesansar.com/combine/a501278e74fa2b0ce06fe0f4c01a8210-1589878848" media="screen,projection">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146418253-1"></script>
-<script data-ad-client="ca-pub-7016530808727939" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head>
-
-<body>
-<nav class="teal darken-1 z-depth-0" role="navigation">
-	<div class="nav-wrapper container">
-		<a id="logo-container" href="https://www.codesansar.com" class="brand-logo">
-			<img src="https://www.codesansar.com/themes/musu/assets/images/logo.jpg" alt="CodeSansar" class="responsive-img">
-		</a>
-		<ul class="right hide-on-med-and-down">
-			<li>
-				<a href="https://www.codesansar.com/tutorials/" class="dropdown-trigger" data-target="tutorials-web-dropdown">Tutorials &#9662;</a>
-			</li>
-			<li>
-				<a href="https://www.codesansar.com/examples/" class="dropdown-trigger" data-target="examples-web-dropdown">Examples &#9662;</a>
-			</li>
-			<li><a href="https://www.codesansar.com/online-calculator/">Online Calculator </a></li>
-		</ul>
-		<ul id="nav-mobile" class="sidenav">
-			<li>
-				<a href="https://www.codesansar.com/tutorials/" class="dropdown-trigger" data-target="tutorials-mobile-dropdown">Tutorials &#9662;</a>
-				</li>
-			<li>
-				<a href="https://www.codesansar.com/examples/" class="dropdown-trigger" data-target="examples-mobile-dropdown">Examples &#9662;</a>
-			</li>
-			<li><a href="https://www.codesansar.com/online-calculator/">Online Calculator </a></li>		</ul>
-		<a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="fas fa-bars white-text"></i></a>
-	</div>
-</nav>
-{% for object in section_list %}
-
-<ul id="tutorials-web-dropdown" class="dropdown-content">
-	<li><a href="{% url 'section_detail' object.id %}">{{ object.title }}</a></li>
-	<li class="divider"></li>
-</ul>
-  {% endfor %}
+{% block content %}
 
 
 
-<ul id="tutorials-mobile-dropdown" class="dropdown-content">
-</ul>
-  
-
-
-<ul id="examples-web-dropdown" class="dropdown-content">
-</ul> 
-  
-<ul id="examples-mobile-dropdown" class="dropdown-content">
-</ul>
 
 <div id="index-banner" class="parallax-container">
 	<div class="section no-pad-bot">
@@ -160,51 +104,6 @@
 			</div>
 		</div>
 	</div>
-</div><footer class="page-footer grey lighten-3">
-	<div class="container">
-		<div class="row">
-			<div class="col l5 s12">
-				<h5 class="grey-text text-darken-4">About Us</h5>
-				<p class="grey-text text-darken-4 footp">Codesansar is online platform that provides tutorials and examples on popular programming languages.</p>
-			</div>
-			<div class="col l4 s12">
-				<h5 class="grey-text text-darken-4">Links</h5>
-				<ul>
-					<li><a class=" btn-flat blue-text" href="https://www.codesansar.com/about-us.htm">About Us</a></li>
-					<li><a class=" btn-flat  blue-text" href="https://www.codesansar.com/contact-us.htm">Contact Us</a></li>
-					<li><a class=" btn-flat  blue-text" href="https://www.codesansar.com/privacy-policy.htm">Privacy Policy</a></li>
-					<li><a class=" btn-flat  blue-text" href="https://www.codesansar.com/cookies-policy.htm">Cookies Policy</a></li>
-				</ul>
-			</div>
-			<div class="col l3 s12 ">
-				<h5 class="grey-text text-darken-4">Social Media</h5>
-				<ul>
-					<li>
-						<a class="facebook btn-flat "  href="https://www.facebook.com/codesansar" rel="nofollow"><i class="fab fa-facebook"></i>  Facebook</a>
-					</li>
-					<li>
-						<a class="twitter btn-flat "  href="https://www.twitter.com/codesansar" rel="nofollow"><i class="fab fa-twitter"></i> Twitter</a>
-					</li>
-					<li>
-						<a class="youtube  btn-flat " href="https://www.youtube.com/channel/UCxg2Q0krbG2_BA6L_PC93sg" rel="nofollow"><i class="fab fa-youtube"></i> Youtube</a>
-					</li>
-					<li>
-						<a class="github btn-flat " href="https://github.com/codesansar" rel="nofollow"><i class="fab fa-github"></i> Github</a>
-					</li>
-					<li>
-						<a class="instagram btn-flat " href="https://www.instagram.com/codesansar" rel="nofollow"><i class="fab fa-instagram"></i> Instagram</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="footer-copyright teal darken-1">
-		<div class="container white-text center">
-			&copy; 2023 Codesansar. All Rights Reserved.
-		</div>
-	</div>
-</footer>
-<script src="{% static 'www.codesansar.com/combine/22.html' %}"></script>
+</div>
 
-</body>
-</html>
+{% endblock content %}

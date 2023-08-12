@@ -31,5 +31,5 @@ class detail_subject(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self) -> str:
-        return self.content
+        return self.content.split()[:10]
     
