@@ -22,5 +22,10 @@ class Subject_Detail(DetailView):
 
 
 def Dashboard(request):
-    data = Subject.objects.all()
+    data = Section.objects.all()
     return render(request, 'dashboard.html', {'data':data})    
+
+def Dashboard_detail(request, id):
+    data = Section.objects.get(id=id)
+    topics = Subject.objects.filter(section=data)
+    return render(request, 'dashboard_detail.html', {'data':data, 'topics':topics})    
