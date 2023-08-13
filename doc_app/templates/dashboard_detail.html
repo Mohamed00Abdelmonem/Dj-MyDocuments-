@@ -17,11 +17,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container mt-4">
+    <div class="container my-5">
 
     <ol class="breadcrumb my-4">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Data</li>
+        <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Sections</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{data}}</li>
 
     </ol>
 
@@ -43,7 +44,7 @@
         <div class="col-md-9">
             <!-- Main content area -->
             <h2>Documents Dashboard</h2>
-                <a href="#"  class="btn btn-success mb-3">Create New Topic</a>
+                <a href="{% url 'Create_Subject' %}"  class="btn btn-success mb-3">Create New Topic</a>
                 <table class="table">
                     <!-- ... (your table content) ... -->
                 </table>
@@ -65,8 +66,8 @@
                         <td>{{topic.id}}</td>
                         <td> <a href="/">{{topic.title}}</a></td>
                         <td>
-                            <button class="btn btn-sm btn-info">Edit</button>
-                            <button class="btn btn-sm btn-danger">Delete</button>
+                            <button class="btn btn-sm btn-info" ><a href="{% url 'update_subject' topic.id %}">Edit</a></button>
+                            <button class="btn btn-sm btn-danger"><a href="{% url 'delete_subject' topic.id %}">Delete</a></button>
                         </td>
                     </tr>
                     {% endfor %}
