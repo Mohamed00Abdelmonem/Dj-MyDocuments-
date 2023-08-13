@@ -12,10 +12,15 @@ class Section_List(ListView):
 def Subject_list(request, id):
     data = Section.objects.get(id=id)
     subject = Subject.objects.filter(section=data)
-    return render(request, 'python-programming.html', {'subject_list':subject, 'data':data})
+    return render(request, 'topic_main.html', {'subject_list':subject, 'data':data})
 
 
 
 class Subject_Detail(DetailView):
     model = Subject
     template_name = 'topic_detail.html'
+
+
+def Dashboard(request):
+    data = Subject.objects.all()
+    return render(request, 'dashboard.html', {'data':data})    
