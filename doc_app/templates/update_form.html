@@ -1,6 +1,16 @@
-<form method="post">
-    {% csrf_token %}
-    {{form}}
-    <!-- Other form fields here -->
-    <button type="submit">Submit</button>
-</form> 
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Update</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form.as_p }}
+        <!-- Other form fields here -->
+        <button class="btn waves-effect waves-light" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock content %}
+
+

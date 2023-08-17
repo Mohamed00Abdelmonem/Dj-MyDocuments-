@@ -83,12 +83,12 @@ class Update_Subject(UpdateView):
 
 class Delete_Section(DeleteView):
     model = Section
-    success_url = 'dashboard'    
+    success_url = '/'    
     template_name = 'delete_section.html'
 
 
 
 class Delete_Subject(DeleteView):
     model = Subject
-    success_url = 'dashboard'    
+    success_url = '/'    
     template_name = 'delete_subject.html'

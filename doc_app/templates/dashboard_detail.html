@@ -8,11 +8,20 @@
     <link rel="icon" type="image/ico" href="https://www.codesansar.com/themes/musu/assets/images/favicon.ico">
 
     <style>
-        .list-group-item {
-            background-color: green;
-            border-color: green;
-        }
+     
+
+        a:hover {
+    color: #e6ae56;
+    text-decoration: none;
+}
+a {
+    color: #44db4b;
+    text-decoration: none;
+    /* background-color: n; */
+}
     </style>
+
+    
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
@@ -32,24 +41,18 @@
     <div class="row">
         <div class="col-md-3">
             <!-- Sidebar or quick links can go here -->
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
-                <a href="#" class="list-group-item list-group-item-action">Documents</a>
-                <!-- Add more sidebar links as needed -->
-            </div>
+            
         </div>
 
        
         
         <div class="col-md-9">
             <!-- Main content area -->
-            <h2>Documents Dashboard</h2>
-                <a href="{% url 'create_subject' %}"  class="btn btn-success mb-3">Create New Topic</a>
-                <table class="table">
-                    <!-- ... (your table content) ... -->
-                </table>
-            </div>
             <h2>{{data}}</h2>
+               <br>
+
+            </div>
+         
 
             <table class="table">
                 <thead>
@@ -64,10 +67,11 @@
 
                     <tr>
                         <td>{{topic.id}}</td>
-                        <td> <a href="/">{{topic.title}}</a></td>
+                        <td><a href="#"  class="btn waves-effect waves-light" >{{topic.title}}</a>
+                        </td>
                         <td>
-                            <button class="btn btn-sm btn-info" ><a href="{% url 'update_subject' topic.id %}">Edit</a></button>
-                            <button class="btn btn-sm btn-danger"><a href="{% url 'delete_subject' topic.id %}">Delete</a></button>
+                            <a href="{% url 'update_subject' topic.id %}"  class="btn waves-effect waves-light" >Edit</a>
+                            <a href="{% url 'delete_subject' topic.id %}"  class="btn waves-effect waves-light" >Delete</a>
 
                         </td>
                     </tr>

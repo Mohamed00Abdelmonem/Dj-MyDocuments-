@@ -20,7 +20,8 @@
 	<nav class="teal darken-1 z-depth-0 mb-4" role="navigation">
 		<div class="nav-wrapper container">
 		<a id="logo-container" href="/" class="brand-logo">
-			<img src="https://www.codesansar.com/themes/musu/assets/images/logo.jpg" alt="CodeSansar" class="responsive-img">
+			<a class="navbar-brand" href="/"> My Docoments</a>
+			<!-- <img src="https://www.codesansar.com/themes/musu/assets/images/logo.jpg" alt="CodeSansar" class="responsive-img"> -->
 		</a>
 		<ul class="right hide-on-med-and-down">
 			<li>
@@ -34,11 +35,15 @@
 		<ul id="nav-mobile" class="sidenav">
 			<li>
 				<a href="https://www.codesansar.com/tutorials/" class="dropdown-trigger" data-target="tutorials-mobile-dropdown">Tutorials &#9662;</a>
-				</li>
+				{% for object in section_list %}
+	<li><a href="{% url 'section_detail' object.id %}">{{ object.title }}</a></li>
+	<li class="divider"></li>
+	{% endfor %}
+			</li>
 			<li>
 				<a href="https://www.codesansar.com/examples/" class="dropdown-trigger" data-target="examples-mobile-dropdown">Examples &#9662;</a>
 			</li>
-			<li><a href="https://www.codesansar.com/online-calculator/">Online Calculator </a></li>		</ul>
+			<li><a href="https://www.codesansar.com/online-calculator/">Online_Calculator </a></li>		</ul>
 		<a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="fas fa-bars white-text"></i></a>
 	</div>
 </nav>
@@ -115,7 +120,7 @@
 	</div>
 	<div class="footer-copyright teal darken-1">
 		<div class="container white-text center">
-			&copy; 2023 Codesansar. All Rights Reserved.
+			&copy; 2023 My Docoments (Mohamed Abdelmonem.) All Rights Reserved.
 		</div>
 	</div>
 </footer>

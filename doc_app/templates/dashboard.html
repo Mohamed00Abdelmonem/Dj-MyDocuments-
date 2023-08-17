@@ -31,14 +31,7 @@
 
 <div class="container mt-4">
     <div class="row">
-        <div class="col-md-3">
-            <!-- Sidebar or quick links can go here -->
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
-                <a href="#" class="list-group-item list-group-item-action">Documents</a>
-                <!-- Add more sidebar links as needed -->
-            </div>
-        </div>
+        
 
        
         
@@ -64,11 +57,11 @@
                     {% for section in data %}
                     <tr>
                         <td>{{section.id}}</td>
-                        <td> <a href="{% url 'dashboard_detail' section.id %}">{{section.title}}</a></td>
+                        <td> <a href="{% url 'dashboard_detail' section.id %}" class="btn waves-effect waves-light">{{section.title}}</a></td>
                         <td>
-                            <button class="btn waves-effect waves-light" ><a href="{% url 'update_section' section.id %}">Edit</a></button>
-                            <button class="btn waves-effect waves-light"><a href="{% url 'delete_section' section.id %}">Delete</a></button>
-                            <a href="{% url 'create_subject' section.id %}"  class="btn waves-effect waves-light" >Create New Topic</a>
+                            <a href="{% url 'update_section' section.id %}" class="btn waves-effect waves-light">Edit</a>
+                            <a href="{% url 'delete_section' section.id %}" class="btn waves-effect waves-light">Delete</a>
+                            <a href="{% url 'create_subject' section.id %}"  class="btn waves-effect waves-light">Create New Topic</a>
 
                         </td>
                     </tr>
