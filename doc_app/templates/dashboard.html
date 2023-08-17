@@ -7,11 +7,12 @@
     <link rel="icon" type="image/ico" href="https://www.codesansar.com/themes/musu/assets/images/favicon.ico">
 
     <style>
-        .list-group-item {
-            background-color: green;
-            border-color: green;
-        }
+       
+        a {
+        text-decoration: none; /* This removes the underline */
+    }
     </style>
+
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
@@ -65,8 +66,10 @@
                         <td>{{section.id}}</td>
                         <td> <a href="{% url 'dashboard_detail' section.id %}">{{section.title}}</a></td>
                         <td>
-                            <button class="btn btn-sm btn-info" ><a href="{% url 'update_section' section.id %}">Edit</a></button>
-                            <button class="btn btn-sm btn-danger"><a href="{% url 'delete_section' section.id %}">Delete</a></button>
+                            <button class="btn waves-effect waves-light" ><a href="{% url 'update_section' section.id %}">Edit</a></button>
+                            <button class="btn waves-effect waves-light"><a href="{% url 'delete_section' section.id %}">Delete</a></button>
+                            <a href="{% url 'create_subject' section.id %}"  class="btn waves-effect waves-light" >Create New Topic</a>
+
                         </td>
                     </tr>
                     {% endfor %}

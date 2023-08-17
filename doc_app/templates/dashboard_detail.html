@@ -44,7 +44,7 @@
         <div class="col-md-9">
             <!-- Main content area -->
             <h2>Documents Dashboard</h2>
-                <a href="{% url 'Create_Subject' %}"  class="btn btn-success mb-3">Create New Topic</a>
+                <a href="{% url 'create_subject' %}"  class="btn btn-success mb-3">Create New Topic</a>
                 <table class="table">
                     <!-- ... (your table content) ... -->
                 </table>
@@ -68,6 +68,7 @@
                         <td>
                             <button class="btn btn-sm btn-info" ><a href="{% url 'update_subject' topic.id %}">Edit</a></button>
                             <button class="btn btn-sm btn-danger"><a href="{% url 'delete_subject' topic.id %}">Delete</a></button>
+
                         </td>
                     </tr>
                     {% endfor %}

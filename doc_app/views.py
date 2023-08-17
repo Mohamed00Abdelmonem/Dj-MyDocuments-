@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Subject, Section
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-# Create your views here.
+from .forms import Subject_Form
+
+
 class Section_List(ListView):
     model = Section
     template_name = 'index.html'
@@ -37,18 +39,39 @@ class Create_Section(CreateView):
     success_url = 'dashboard'
 
 
-class Create_Subject(CreateView):
-    model = Subject
-    template_name = 'create_subject.html'
-    fields = '__all__'
-    success_url = 'dashboard'    
+# class Create_Subject(CreateView):
+#     model = Subject
+#     template_name = 'create_subject.html'
+#     fields = '__all__'
+#     success_url = 'dashboard'
+
+def Create_Subject(request, id):
+    data = Section.objects.get(id=id)
+
+
+    if request.method == 'POST':
+        form = Subject_Form(request.POST)
+        if form.is_valid():
+            myform = form.save(commit=False)
+            myform.author = request.user
+            myform.section = data  # Assign the section to the subject
+            myform.save()
+            return redirect('/')
+
+    else:
+        form = Subject_Form()
+
+    return render (request,'create_subject.html', {'form': form} )
+
+       
+            
 
 
 class Update_Section(UpdateView):
     model = Section
     fields = '__all__'    
     template_name = 'update_form.html'
-    success_url = 'dashboard'    
+    success_url = '/'    
 
 
 class Update_Subject(UpdateView):
